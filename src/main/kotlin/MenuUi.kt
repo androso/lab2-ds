@@ -50,6 +50,10 @@ class MenuUI(private val ordenService: OrdenService) {
         println("\n=== Registrar Nueva Orden ===")
         print("Ingrese el nombre del cliente: ")
         val nombreCliente = readlnOrNull()?.trim() ?: return
+        if (nombreCliente.isBlank()) {
+            println("Nombre de cliente inválido.")
+            return
+        }
 
         print("¿Cuántos tipos de pupusas desea ordenar?: ")
         val cantidadTipos = readlnOrNull()?.toIntOrNull() ?: 0

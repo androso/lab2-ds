@@ -16,7 +16,7 @@ class OrdenServiceImpl : OrdenService {
 
     override fun registrarOrden(orden: Orden) {
         if (!validator.validar(orden)){
-            throw IllegalArgumentException("Orden inválida: debe tener un cliente y al menos una pupusa")
+            throw IllegalArgumentException("Orden inválida: debe tener un cliente y al menos una pupusa, cuyo nombre no puede ser un digito")
         } else {
             ordenesPendientes.enqueue(orden)
         }
